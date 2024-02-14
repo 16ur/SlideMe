@@ -1,0 +1,18 @@
+[
+    {
+      "titre": "1 Bonjour les amis",
+      "contenu": "Premier test de slider avec React. ",
+      "image": "images.jpg"
+    },
+    {
+      "titre": "2 Deuxième slide",
+      "contenu":
+        "Deuxième slide avec un contenu différent. On peut mettre ce qu'on veut.",
+        "image": "images.jpg"
+    },
+    {
+      "titre": "3 Lucas",
+      "contenu": "Gros con de première",
+      "image": "images.jpg"
+    }
+]

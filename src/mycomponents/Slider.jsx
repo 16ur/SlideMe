@@ -2,12 +2,13 @@ import React from "react";
 
 export default Slider;
 
-function Slider({ titre, contenu, image }) {
+function Slider({ titre, sousTitre, contenu, image, imageSize }) {
   return (
-    <div>
+    <div className="slider-container">
       <h1>{titre}</h1>
+      <h2>{sousTitre}</h2>
       <p>{contenu}</p>
-      <img src={image} alt="image" />
+      <div className="w-full">{image}</div>
     </div>
   );
 }

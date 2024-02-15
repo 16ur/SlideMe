@@ -19,11 +19,12 @@ const App = () => {
 
   return (
     <div className="">
-      <div className="h-[33rem] bg-stone-50 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
+      <div className="h-[33rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
         <Slider
           titre={<div style={{ fontSize: "29px" }}>{slide.titre}</div>}
-          contenu={slide.contenu}
-          image={slide.image}
+          sousTitre={<div style={{ fontSize: "22px" }}>{slide.sousTitre}</div>}
+          contenu={<div style={{ fontSize: "18px" }}>{slide.contenu}</div>}
+          image={<img src={slide.image} alt={slide.titre} />}
         />
       </div>
       <div className="flex justify-center">

@@ -3,6 +3,8 @@ import { useState } from "react";
 import Slider from "./mycomponents/Slider";
 import "./App.css";
 import slidesData from "./slides.json";
+import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -15,6 +17,27 @@ const App = () => {
 
   const handleNext = () => {
     setIndex((index + 1) % total);
+  };
+
+  const handleGoToSlide = (event) => {
+    const slideNumber = parseInt(event.target.value);
+    if (!isNaN(slideNumber) && slideNumber >= 1 && slideNumber <= total) {
+      setIndex(slideNumber - 1);
+    }
+  };
+
+  const handleGoToFirstSlide = () => {
+    setIndex(0);
+  };
+
+  const handleGoToLastSlide = () => {
+    setIndex(total - 1);
+  };
+
+  const hideIndexSlide = () => {
+    const slideIndex = document.getElementById("slideIndex");
+    slideIndex.style.display =
+      slideIndex.style.display === "none" ? "block" : "none";
   };
 
   return (
@@ -40,13 +63,34 @@ const App = () => {
         >
           Suivant
         </button>
+        <input
+          type="number"
+          min="1"
+          max={total}
+          onChange={handleGoToSlide}
+          className="mx-2 mt-10 bg-white border border-gray-300 rounded py-2 px-4"
+          style={{ width: "60px", textAlign: "center" }}
+        />
       </div>
       <div className="flex justify-center">
-        <div>
-          <p>
-            Slide {index + 1} of {total}
-          </p>
-        </div>
+        <button
+          onClick={handleGoToFirstSlide}
+          className="underline mr-2 text-lg"
+        >
+          Début
+        </button>
+        <button onClick={handleGoToLastSlide} className="underline text-lg">
+          Fin
+        </button>
+      </div>
+      <div className="flex justify-center">
+        <p id="slideIndex">
+          Slide {index + 1} / {total}
+        </p>
+        <p> </p>
+        <button onClick={hideIndexSlide}>
+          <FontAwesomeIcon icon={faEye} />
+        </button>
       </div>
     </div>
   );

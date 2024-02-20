@@ -1,19 +1,21 @@
 [
-    {
-      "titre": "Présentation de ErgoL",
-      "sousTitre": "ErgoL, c'est quoi ?", 
-      "contenu": "Voici ErgoL ! ",
-      "image": "src/assets/ergol.png",
-      "imageSize": "w-48"
-    },
-    {
-      "titre": "SFU en ErgoL",
-      "sousTitre": "Taux de SFU",
-      "image": "src/assets/sfu.png"
-    },
-    {
-      "titre": "Principe de 1DK",
-      "sousTitre": "1DK, c'est quoi ?",
-      "image": "src/assets/touchem1.png"
-    }
+  {
+    "titre": "Présentation de ErgoL",
+    "sousTitre": "ErgoL, c'est quoi ?", 
+    "contenu": "Voici ErgoL ! ",
+    "image": "src/assets/ergol.png",
+    "imageSize": "w-32" 
+  },
+  {
+    "titre": "SFU en ErgoL",
+    "sousTitre": "Taux de SFU",
+    "image": "src/assets/sfu.png",
+    "imageSize": "w-32"
+  },
+  {
+    "titre": "Principe de 1DK",
+    "sousTitre": "1DK, c'est quoi ?",
+    "image": "src/assets/touchem1.png",
+    "imageSize": "w-32" 
+  }
 ]

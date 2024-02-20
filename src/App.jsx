@@ -10,6 +10,7 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const slide = slidesData[index];
   const total = slidesData.length;
+  const [showPreview, setShowPreview] = useState(false); // Ajout de l'état pour afficher/masquer l'aperçu
 
   const handlePrev = () => {
     setIndex((index - 1 + total) % total);
@@ -40,8 +41,29 @@ const App = () => {
       slideIndex.style.display === "none" ? "block" : "none";
   };
 
+  const togglePreview = () => {
+    setShowPreview(!showPreview); // Inverser l'état de l'aperçu
+  };
+
   return (
     <div className="">
+      {showPreview && ( // Afficher l'aperçu uniquement si showPreview est vrai
+        <div className="flex justify-center mt-10">
+          {slidesData.map((slide, i) => (
+            <div
+              key={i}
+              className="w-20 h-20 bg-gray-200 m-2 rounded-md"
+              onClick={() => setIndex(i)}
+            >
+              <img
+                src={slide.image}
+                alt={slide.titre}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      )}
       <div className="h-[33rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
         <Slider
           titre={<div style={{ fontSize: "29px" }}>{slide.titre}</div>}
@@ -90,6 +112,11 @@ const App = () => {
         <p> </p>
         <button onClick={hideIndexSlide}>
           <FontAwesomeIcon icon={faEye} />
+        </button>
+      </div>
+      <div className="flex justify-center mt-2">
+        <button onClick={togglePreview} className="underline text-lg">
+          {showPreview ? "Masquer l'aperçu" : "Afficher l'aperçu"} {}
         </button>
       </div>
     </div>

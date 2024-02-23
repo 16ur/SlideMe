@@ -2,20 +2,34 @@
   {
     "titre": "Présentation de ErgoL",
     "sousTitre": "ErgoL, c'est quoi ?", 
-    "contenu": "Voici ErgoL ! ",
+    "para ": "Voici ErgoL ! ",
     "image": "src/assets/ergol.png",
-    "imageSize": "w-32" 
+    "imageSize": "w-32" ,
+    "listePuces": ["Point 1", "Point 2", "Point 3"]
   },
   {
     "titre": "SFU en ErgoL",
     "sousTitre": "Taux de SFU",
     "image": "src/assets/sfu.png",
-    "imageSize": "w-32"
+    "imageSize": "w-32" 
   },
   {
     "titre": "Principe de 1DK",
     "sousTitre": "1DK, c'est quoi ?",
     "image": "src/assets/touchem1.png",
     "imageSize": "w-32" 
+  },
+  {
+    "titre": "Couche Alt Gr",
+    "listePuces": ["Point 1", "Point 2", "Point 3"],
+    "listeNum": ["Point 1", "Point 2", "Point 3"]
+  },
+  {
+    "titre": "Test",
+    "code": "std::cout << \"Hello World\";\nreturn rm *;"
+  },
+  {
+    "titre": "Test"
+
   }
 ]

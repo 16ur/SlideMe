@@ -5,6 +5,7 @@ import "./App.css";
 import slidesData from "./slides.json";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -47,29 +48,39 @@ const App = () => {
 
   return (
     <div className="">
-      {showPreview && ( // Afficher l'aperçu uniquement si showPreview est vrai
+      {showPreview && (
         <div className="flex justify-center mt-10">
           {slidesData.map((slide, i) => (
             <div
               key={i}
-              className="w-20 h-20 bg-gray-200 m-2 rounded-md"
+              className={`w-40 h-24 bg-gray-200 m-2 rounded-md ${
+                index === i ? "border-2" : ""
+              }`}
               onClick={() => setIndex(i)}
+              style={{ cursor: "pointer" }}
             >
               <img
                 src={slide.image}
                 alt={slide.titre}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-md"
               />
             </div>
           ))}
         </div>
       )}
-      <div className="h-[33rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
+      <div className="h-[40rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
         <Slider
           titre={<div style={{ fontSize: "29px" }}>{slide.titre}</div>}
           sousTitre={<div style={{ fontSize: "22px" }}>{slide.sousTitre}</div>}
-          contenu={<div style={{ fontSize: "18px" }}>{slide.contenu}</div>}
+          para={<div style={{ fontSize: "18px" }}>{slide.para}</div>}
           image={<img src={slide.image} alt={slide.titre} />}
+          listePuces={slide.listePuces}
+          listeNum={slide.listeNum}
+          code={
+            slide.code && (
+              <SyntaxHighlighter language="cpp">{slide.code}</SyntaxHighlighter>
+            )
+          }
         />
       </div>
       <div className="flex justify-center">

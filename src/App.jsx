@@ -6,6 +6,7 @@ import slidesData from "./slides.json";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import ReactMarkdown from "react-markdown";
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -82,6 +83,9 @@ const App = () => {
                 {slide.code}
               </SyntaxHighlighter>
             )
+          }
+          markDown={
+            slide.markDown && <ReactMarkdown>{slide.markDown}</ReactMarkdown>
           }
         />
       </div>

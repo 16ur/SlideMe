@@ -9,6 +9,7 @@ export default function Slider({
   listePuces,
   listeNum,
   code,
+  markDown,
 }) {
   return (
     <div className="slider-container">
@@ -36,6 +37,7 @@ export default function Slider({
           </pre>
         </div>
       )}
+      {markDown && <div>{markDown}</div>}
     </div>
   );
 }

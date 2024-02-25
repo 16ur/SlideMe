@@ -62,7 +62,6 @@ const App = () => {
             >
               <img
                 src={slide.image}
-                alt={slide.titre}
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
@@ -74,7 +73,7 @@ const App = () => {
           titre={<div style={{ fontSize: "29px" }}>{slide.titre}</div>}
           sousTitre={<div style={{ fontSize: "22px" }}>{slide.sousTitre}</div>}
           para={<div style={{ fontSize: "18px" }}>{slide.para}</div>}
-          image={<img src={slide.image} alt={slide.titre} />}
+          image={<img src={slide.image} />}
           listePuces={slide.listePuces}
           listeNum={slide.listeNum}
           code={

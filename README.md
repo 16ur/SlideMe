@@ -1,6 +1,6 @@
 ## Différentes balises pour la création de slides
 
-- # Titre de la slide -> "titre"
+- #### Titre de la slide -> "titre"
 - ## Sous-titre de la slide -> "sousTitre"
 - ### Ajoût d’image -> "image"
 - ### Gérer la taille de l’image -> "imageSize"

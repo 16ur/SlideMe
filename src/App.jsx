@@ -78,7 +78,9 @@ const App = () => {
           listeNum={slide.listeNum}
           code={
             slide.code && (
-              <SyntaxHighlighter language="cpp">{slide.code}</SyntaxHighlighter>
+              <SyntaxHighlighter language={slide.langage}>
+                {slide.code}
+              </SyntaxHighlighter>
             )
           }
         />

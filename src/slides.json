@@ -26,7 +26,8 @@
   },
   {
     "titre": "Test",
-    "code": "std::cout << \"Hello World\";\nreturn rm *;"
+    "code": "std::cout << \"Hello World\";\nreturn rm *;",
+    "langage": "cpp"
   },
   {
     "titre": "Test"

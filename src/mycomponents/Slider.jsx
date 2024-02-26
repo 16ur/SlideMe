@@ -4,7 +4,7 @@ export default function Slider({
   type,
   titre,
   sousTitre,
-  para,
+  contenu,
   image,
   imageSize,
   listePuces,
@@ -27,14 +27,14 @@ export default function Slider({
         content = (
           <div className="slider-container">
             <h1 className="text-4xl font-bold text-center">{titre}</h1>
-            <p>{para}</p>
+            <p>{contenu}</p>
           </div>
         );
         break;
       case "contenuSeul":
         content = (
           <div className="slider-container">
-            <p>{para}</p>
+            <p>{contenu}</p>
           </div>
         );
         break;
@@ -45,15 +45,12 @@ export default function Slider({
           </div>
         );
     }
-  }
-
-  return (
-    <div>
-      {content}
+  } else {
+    content = (
       <div className="slider-container">
         <h1>{titre}</h1>
         <h2>{sousTitre}</h2>
-        <p>{para}</p>
+        <p>{contenu}</p>
         {image && <div>{image}</div>}
         <ul>
           {listePuces &&
@@ -77,6 +74,8 @@ export default function Slider({
         )}
         {markDown && <div>{markDown}</div>}
       </div>
-    </div>
-  );
+    );
+  }
+
+  return content;
 }

@@ -2,7 +2,7 @@
   {
     "titre": "Présentation de ErgoL",
     "sousTitre": "ErgoL, c'est quoi ?", 
-    "para ": "Voici ErgoL ! ",
+    "contenu": "Voici ErgoL ! ",
     "image": "src/assets/ergol.png",
     "imageSize": "w-32" ,
     "listePuces": ["Point 1", "Point 2", "Point 3"]
@@ -33,9 +33,15 @@
   {
     "type": "titreOnly",
     "titre": "Titre seul"
-
-    
-
-
+  },
+  {
+    "type": "titreContenu",
+    "titre": "Titre et contenu",
+    "contenu": "Contenu"
+  },
+  {
+    "type": "contenuSeul",
+    "contenu": "Contenu seul"
   }
+
 ]

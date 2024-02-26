@@ -72,7 +72,7 @@ const App = () => {
         <Slider
           titre={<div style={{ fontSize: "29px" }}>{slide.titre}</div>}
           sousTitre={<div style={{ fontSize: "22px" }}>{slide.sousTitre}</div>}
-          para={<div style={{ fontSize: "18px" }}>{slide.para}</div>}
+          contenu={<div style={{ fontSize: "18px" }}>{slide.contenu}</div>}
           image={<img src={slide.image} />}
           listePuces={slide.listePuces}
           listeNum={slide.listeNum}
@@ -86,6 +86,7 @@ const App = () => {
           markDown={
             slide.markDown && <ReactMarkdown>{slide.markDown}</ReactMarkdown>
           }
+          type={slide.type}
         />
       </div>
       <div className="flex justify-center">

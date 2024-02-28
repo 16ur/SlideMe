@@ -49,9 +49,9 @@ export default function Slider({
             <div>
               <h1 className="text-4xl font-bold">{titre}</h1>
               <p>{contenu}</p>
+              {image && <div>{image}</div>}
             </div>
             <div>
-              {image && <div>{image}</div>}
               <ul>
                 {listePuces &&
                   listePuces.map((puce, index) => <li key={index}>• {puce}</li>)}

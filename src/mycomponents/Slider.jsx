@@ -17,17 +17,22 @@ export default function Slider({
   if (type) {
     switch (type) {
       case "titreOnly":
-        content = (
-          <div className="slider-container flex justify-center items-center h-full">
-            <h1 className="font-bold text-2xl">{titre}</h1>
-          </div>
-        );
-        break;
+  content = (
+    <div className="slider-container flex justify-center items-center h-full">
+      <h1 className="text-6xl font-bold">{titre}</h1>
+      
+      {image && <div>{image}</div>}
+      {console.log(imageSize)}
+      {console.log(titre)}
+    </div>
+  );
+  break;
+
       case "titreContenu":
         content = (
           <div className="slider-container">
-            <h1 className="text-4xl font-bold">{titre}</h1>
-            <p style={{ marginTop: "20px" }}>{contenu}</p>
+            <h1 className="text-4xl font-bold text-center">{titre}</h1>
+            <p>{contenu}</p>
           </div>
         );
         break;
@@ -35,6 +40,39 @@ export default function Slider({
         content = (
           <div className="slider-container">
             <p>{contenu}</p>
+          </div>
+        );
+        break;
+      case "gridColumn": 
+        content = (
+          <div className="slider-container grid grid-cols-2 gap-4">
+            <div>
+              <h1 className="text-4xl font-bold">{titre}</h1>
+              <p>{contenu}</p>
+            </div>
+            <div>
+              {image && <div>{image}</div>}
+              <ul>
+                {listePuces &&
+                  listePuces.map((puce, index) => <li key={index}>• {puce}</li>)}
+              </ul>
+              <ol>
+                {listeNum &&
+                  listeNum.map((num, index) => (
+                    <li key={index}>
+                      {index + 1}. {num}
+                    </li>
+                  ))}
+              </ol>
+              {code && (
+                <div>
+                  <pre>
+                    <code>{code}</code>
+                  </pre>
+                </div>
+              )}
+              {markDown && <div>{markDown}</div>}
+            </div>
           </div>
         );
         break;

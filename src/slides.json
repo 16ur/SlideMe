@@ -1,14 +1,15 @@
 [
   {
     "type": "titreOnly",
-    "titre": "Présentation de SlideMe"
+    "titre": "Présentation de SlideMe",
+    "image": "/src/assets/logo.png",
+    "imageSize": "100px"
   },
   {
-    "type": "titreContenu",
-    "titre": "Présentation du projet",
-    "contenu": "SlideMe est un projet de fin d'année de la formation de développeur web et mobile de l'école O'clock. Il a été réalisé par 4 élèves de la formation."
+    "type": "gridColumn",
+    "listePuces": ["Point 1", "Point 2", "Point 3"],
+    "titre": "Présentation du sujet",
+    "contenu":"Développer une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX."
+
   }
-
-
-
 ]

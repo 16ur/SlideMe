@@ -19,15 +19,15 @@ export default function Slider({
       case "titreOnly":
         content = (
           <div className="slider-container flex justify-center items-center h-full">
-            <h1 className="text-6xl font-bold">{titre}</h1>
+            <h1 className="font-bold text-2xl">{titre}</h1>
           </div>
         );
         break;
       case "titreContenu":
         content = (
           <div className="slider-container">
-            <h1 className="text-4xl font-bold text-center">{titre}</h1>
-            <p>{contenu}</p>
+            <h1 className="text-4xl font-bold">{titre}</h1>
+            <p style={{ marginTop: "20px" }}>{contenu}</p>
           </div>
         );
         break;

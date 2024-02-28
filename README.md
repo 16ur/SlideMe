@@ -9,3 +9,4 @@
 - ### Ajout de code -> "code"
 - ### Ajout de code selon un langage -> "langage"
 - ### Écrire du texte en Markdown -> "markDown"
+- ### Choix du type de la slide -> "type" ("titreOnly", "titreContenu", "contenuSeul")

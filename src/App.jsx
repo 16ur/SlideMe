@@ -3,7 +3,7 @@ import { useState } from "react";
 import Slider from "./mycomponents/Slider";
 import "./App.css";
 import slidesData from "./slides.json";
-import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { faEye, faExpand, faCompress } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import ReactMarkdown from "react-markdown";
@@ -70,9 +70,15 @@ const App = () => {
       )}
       <div className="h-[40rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
         <Slider
-          titre={<div style={{ fontSize: "29px" }}>{slide.titre}</div>}
-          sousTitre={<div style={{ fontSize: "22px" }}>{slide.sousTitre}</div>}
-          contenu={<div style={{ fontSize: "18px" }}>{slide.contenu}</div>}
+          titre={
+            <div
+              style={{ fontSize: slide.type === "titreOnly" ? "55px" : "35px" }}
+            >
+              {slide.titre}
+            </div>
+          }
+          sousTitre={<div style={{ fontSize: "25px" }}>{slide.sousTitre}</div>}
+          contenu={<div style={{ fontSize: "20px" }}>{slide.contenu}</div>}
           image={<img src={slide.image} />}
           listePuces={slide.listePuces}
           listeNum={slide.listeNum}

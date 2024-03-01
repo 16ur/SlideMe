@@ -17,16 +17,13 @@ export default function Slider({
   if (type) {
     switch (type) {
       case "titreOnly":
-  content = (
-    <div className="slider-container flex justify-center items-center h-full">
-      <h1 className="text-6xl font-bold">{titre}</h1>
-      
-      {image && <div>{image}</div>}
-      {console.log(imageSize)}
-      {console.log(titre)}
-    </div>
-  );
-  break;
+        content = (
+          <div className="slider-container flex justify-center items-center h-full">
+            <h1 className="text-6xl font-bold">{titre}</h1>
+            {image && <div>{image}</div>}
+          </div>
+        );
+        break;
 
       case "titreContenu":
         content = (
@@ -43,7 +40,7 @@ export default function Slider({
           </div>
         );
         break;
-      case "gridColumn": 
+      case "gridColumn":
         content = (
           <div className="slider-container grid grid-cols-2 gap-4">
             <div>
@@ -54,7 +51,9 @@ export default function Slider({
             <div>
               <ul>
                 {listePuces &&
-                  listePuces.map((puce, index) => <li key={index}>• {puce}</li>)}
+                  listePuces.map((puce, index) => (
+                    <li key={index}>• {puce}</li>
+                  ))}
               </ul>
               <ol>
                 {listeNum &&

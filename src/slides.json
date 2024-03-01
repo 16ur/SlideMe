@@ -9,9 +9,9 @@
     "type": "gridColumn",
     "listePuces": ["Point 1", "Point 2", "Point 3"],
     "titre": "Présentation du sujet",
-    "contenu":"Développer une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ).",
+    "contenu": "Développer une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ).",
+    "markDown": "# Hi This is **not** a paragraph.",
     "image": "/src/assets/vite.svg",
-    "imageSize": "200px"
-
+    "imageSize": "150px"
   }
 ]

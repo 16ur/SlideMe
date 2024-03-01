@@ -60,10 +60,9 @@ const App = () => {
               onClick={() => setIndex(i)}
               style={{ cursor: "pointer" }}
             >
-              <img
-                src={slide.image}
-                className="w-full h-full object-cover rounded-md"
-              />
+              <p className="text-center justify-center text-black-500 text-7xl">
+                {i + 1}
+              </p>{" "}
             </div>
           ))}
         </div>
@@ -78,8 +77,29 @@ const App = () => {
             </div>
           }
           sousTitre={<div style={{ fontSize: "25px" }}>{slide.sousTitre}</div>}
-            contenu={<div style={{ fontSize: "20px", marginTop: "20px" }}>{slide.contenu}</div>}
-          image=      {slide.image && <img src={slide.image} alt="Slide Image" style={{ width: slide.imageSize }} />}
+          contenu={
+            <div style={{ fontSize: "20px", marginTop: "20px" }}>
+              {slide.contenu}
+            </div>
+          }
+          image={
+            slide.image && (
+              <img
+                src={slide.image}
+                alt="Slide Image"
+                style={{ width: slide.imageSize }}
+              />
+            )
+          }
+          imageLegende={
+            slide.imageLegende && (
+              <p
+                style={{ fontSize: "15px", color: "gray", fontStyle: "italic" }}
+              >
+                {slide.imageLegende}
+              </p>
+            )
+          }
           listePuces={slide.listePuces}
           listeNum={slide.listeNum}
           code={

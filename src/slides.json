@@ -6,12 +6,12 @@
     "imageSize": "100px"
   },
   {
-    "type": "gridColumn",
-    "listePuces": ["Point 1", "Point 2", "Point 3"],
     "titre": "Présentation du sujet",
-    "contenu": "Développer une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ).",
+    "contenu": "Développer une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ) avec une multitude de fonctionnalités.",
+    "listePuces": ["Point 1", "Point 2", "Point 3"],
     "markDown": "# Hi This is **not** a paragraph.",
-    "image": "/src/assets/vite.svg",
+    "image": "/src/assets/logo.png",
+    "imageLegende": "Logo de SlideMe",
     "imageSize": "150px"
   }
 ]

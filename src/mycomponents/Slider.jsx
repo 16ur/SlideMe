@@ -7,6 +7,7 @@ export default function Slider({
   contenu,
   image,
   imageSize,
+  imageLegende,
   listePuces,
   listeNum,
   code,
@@ -21,6 +22,7 @@ export default function Slider({
           <div className="slider-container flex justify-center items-center h-full">
             <h1 className="text-6xl font-bold">{titre}</h1>
             {image && <div>{image}</div>}
+            <p>{imageLegende}</p>
           </div>
         );
         break;
@@ -47,6 +49,7 @@ export default function Slider({
               <h1 className="text-4xl font-bold">{titre}</h1>
               <p>{contenu}</p>
               {image && <div>{image}</div>}
+              <p>{imageLegende}</p>
             </div>
             <div>
               <ul>
@@ -89,6 +92,7 @@ export default function Slider({
         <h2>{sousTitre}</h2>
         <p>{contenu}</p>
         {image && <div>{image}</div>}
+        <p>{imageLegende}</p>
         <ul>
           {listePuces &&
             listePuces.map((puce, index) => <li key={index}>• {puce}</li>)}

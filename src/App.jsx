@@ -3,10 +3,15 @@ import { useState } from "react";
 import Slider from "./mycomponents/Slider";
 import "./App.css";
 import slidesData from "./slides.json";
-import { faEye, faExpand, faCompress } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faLeftLong,
+  faRightLong,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import ReactMarkdown from "react-markdown";
+import CustomDropdown from "./CustomDropdown"; // Importez le composant de menu personnalisé
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -53,12 +58,24 @@ const App = () => {
         <div className="flex justify-center mt-10">
           {slidesData.map((slide, i) => (
             <div
-              key={i}
-              className={`w-40 h-24 bg-gray-200 m-2 rounded-md ${
+              className={`w-40 h-24 bg-gray-200 m-2 ${
                 index === i ? "border-2" : ""
               }`}
               onClick={() => setIndex(i)}
-              style={{ cursor: "pointer" }}
+              style={{
+                border: "1px solid black",
+                transition: "border-color 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.borderColor = "red";
+                e.target.style.transform = "scale(1.1)";
+                e.target.style.transition = "transform 0.3s ease";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.borderColor = "black";
+                e.target.style.transform = "scale(1)";
+                e.target.style.transition = "transform 0.3s ease";
+              }}
             >
               <p className="text-center justify-center text-black-500 text-7xl">
                 {i + 1}
@@ -115,25 +132,27 @@ const App = () => {
           type={slide.type}
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-3">
         <button
           onClick={handlePrev}
-          className="mx-2 mt-10 bg-zinc-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
         >
-          Précédent
+          {" "}
+          <FontAwesomeIcon icon={faLeftLong} />
         </button>
         <button
-          onClick={handleNext}
-          className="mx-2 mt-10 bg-zinc-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
+          onClick={handlePrev}
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
         >
-          Suivant
+          {" "}
+          <FontAwesomeIcon icon={faRightLong} />
         </button>
         <input
           type="number"
           min="1"
           max={total}
           onChange={handleGoToSlide}
-          className="mx-2 mt-10 bg-white border border-gray-300 rounded py-2 px-4"
+          className="bg-white border border-gray-300 rounded"
           style={{ width: "60px", textAlign: "center" }}
         />
       </div>

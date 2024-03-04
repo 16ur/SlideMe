@@ -22,8 +22,6 @@ Bienvenue dans SlideMe, un outil de création de présentations personnalisables
 
 - **Écrire du texte en Markdown** : Utilisez la balise `Markdown"` pour rédiger du texte en Markdown, qui sera interprété et affiché correctement dans votre diapositive.
 
-- **Choix du type de la slide** : Utilisez la balise `"type"` pour définir le type de votre diapositive parmi les options suivantes : `"titreOnly"`, `"titreContenu"`, `"contenuSeul"`, `"gridColumn"`.
-
-- Expliquer comment faire pour mettre des éléments à gauche ou à droite sur la grid
+- **Choix du type de la slide** : Utilisez la balise `"type"` pour définir le type de votre diapositive parmi les options suivantes : `"titreOnly"`, `"titreSousTitre"`,`"titreContenu"`, `"contenuSeul"`, `"gridColumn"`, `"centerElement"`.
 
 Utilisez ces balises pour créer des présentations dynamiques avec SlideMe ! 🚀

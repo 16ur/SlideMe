@@ -27,7 +27,7 @@ export default function Slider({
         content = (
           <div className="slider-container flex justify-center items-center h-full">
             <h1 className="font-bold">{titre}</h1>
-            {image && <div>{image}</div>}
+            <div className="">{image && <div>{image}</div>}</div>
             <p>{imageLegende}</p>
             <p className="position: absolute right-3 bottom-3">{index}</p>
           </div>
@@ -65,6 +65,8 @@ export default function Slider({
                   </li>
                 ))}
             </ol>
+            {Markdown && <div className="text-xl">{Markdown}</div>}
+
             {code && (
               <div>
                 <pre>
@@ -72,7 +74,9 @@ export default function Slider({
                 </pre>
               </div>
             )}
-            {Markdown && <div>{Markdown}</div>}
+            <div className="text-center">
+              <p>{codeLegende}</p>
+            </div>
             <p className="position: absolute right-3 bottom-3">{index}</p>
           </div>
         );
@@ -132,7 +136,7 @@ export default function Slider({
                   </pre>
                 </div>
               )}
-              {Markdown && <div>{Markdown}</div>}
+              {Markdown && <div className="text-xl">{Markdown}</div>}
             </div>
             <p className="position: absolute right-3 bottom-3">{index}</p>{" "}
           </div>
@@ -172,6 +176,8 @@ export default function Slider({
         <p>{contenu}</p>
         {image && <div>{image}</div>}
         <p>{imageLegende}</p>
+        {Markdown && <div className="text-xl">{Markdown}</div>}
+
         <ul className="text-xl mt-7">
           {listePuces &&
             listePuces.map((puce, index) => <li key={index}>• {puce}</li>)}
@@ -192,7 +198,6 @@ export default function Slider({
             </pre>
           </div>
         )}
-        {Markdown && <div>{Markdown}</div>}
         <p className="position: absolute right-3 bottom-3">{index}</p>
       </div>
     );

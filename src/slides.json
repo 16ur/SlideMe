@@ -6,12 +6,17 @@
     "imageSize": "100px"
   },
   {
-    "titre": "Présentation du sujet",
-    "contenu": "Développer une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ) avec une multitude de fonctionnalités.",
-    "listePuces": ["Point 1", "Point 2", "Point 3"],
-    "markDown": "# Hi This is **not** a paragraph.",
-    "image": "/src/assets/logo.png",
+    "type": "gridColumn",
+    "titre": "SlideMe, c’est quoi ?",
+    "contenu": "SlideMe est une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ) avec une multitude de fonctionnalités.",
+    "imageRight": "/src/assets/logo.png",
     "imageLegende": "Logo de SlideMe",
-    "imageSize": "150px"
+    "imageSize": "150px",
+    "listePucesRight": [
+      "SlideMe est une bibliothèque de composants React",
+      "SlideMe permet de réaliser un support de présentation",
+      "SlideMe est écrit en JSX ( React + Vite )",
+      "SlideMe propose une multitude de fonctionnalités"
+    ]
   }
 ]

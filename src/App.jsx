@@ -108,6 +108,24 @@ const App = () => {
               />
             )
           }
+          imageLeft={
+            slide.imageLeft && (
+              <img
+                src={slide.imageLeft}
+                alt="Slide Image"
+                style={{ width: slide.imageSize }}
+              />
+            )
+          }
+          imageRight={
+            slide.imageRight && (
+              <img
+                src={slide.imageRight}
+                alt="Slide Image"
+                style={{ width: slide.imageSize }}
+              />
+            )
+          }
           imageLegende={
             slide.imageLegende && (
               <p
@@ -126,6 +144,8 @@ const App = () => {
               </SyntaxHighlighter>
             )
           }
+          listePucesLeft={slide.listePucesLeft}
+          listePucesRight={slide.listePucesRight}
           markDown={
             slide.markDown && <ReactMarkdown>{slide.markDown}</ReactMarkdown>
           }
@@ -135,14 +155,14 @@ const App = () => {
       <div className="flex justify-center mt-3">
         <button
           onClick={handlePrev}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
         >
           {" "}
           <FontAwesomeIcon icon={faLeftLong} />
         </button>
         <button
           onClick={handlePrev}
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
         >
           {" "}
           <FontAwesomeIcon icon={faRightLong} />

@@ -6,9 +6,13 @@ export default function Slider({
   sousTitre,
   contenu,
   image,
+  imageLeft,
+  imageRight,
   imageSize,
   imageLegende,
   listePuces,
+  listePucesLeft,
+  listePucesRight,
   listeNum,
   code,
   markDown,
@@ -48,13 +52,29 @@ export default function Slider({
             <div>
               <h1 className="text-4xl font-bold">{titre}</h1>
               <p>{contenu}</p>
-              {image && <div>{image}</div>}
-              <p>{imageLegende}</p>
+              {imageLeft && (
+                <div>
+                  {imageLeft}
+                  <p>{imageLegende}</p>
+                </div>
+              )}
+              <ul>
+                {listePucesLeft &&
+                  listePucesLeft.map((puce, index) => (
+                    <li key={index}>• {puce}</li>
+                  ))}
+              </ul>
             </div>
             <div>
+              {imageRight && (
+                <div>
+                  {imageRight}
+                  <p>{imageLegende}</p>
+                </div>
+              )}
               <ul>
-                {listePuces &&
-                  listePuces.map((puce, index) => (
+                {listePucesRight &&
+                  listePucesRight.map((puce, index) => (
                     <li key={index}>• {puce}</li>
                   ))}
               </ul>

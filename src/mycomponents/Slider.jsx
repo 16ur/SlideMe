@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Slider({
+  index,
   type,
   titre,
   sousTitre,
@@ -27,6 +28,7 @@ export default function Slider({
             <h1 className="text-6xl font-bold">{titre}</h1>
             {image && <div>{image}</div>}
             <p>{imageLegende}</p>
+            <p className="position: absolute right-3 bottom-3">{index}</p>
           </div>
         );
         break;
@@ -36,6 +38,7 @@ export default function Slider({
           <div className="slider-container">
             <h1 className="text-4xl font-bold text-center">{titre}</h1>
             <p>{contenu}</p>
+            <p className="position: absolute right-3 bottom-3">{index}</p>
           </div>
         );
         break;
@@ -43,6 +46,7 @@ export default function Slider({
         content = (
           <div className="slider-container">
             <p>{contenu}</p>
+            <p className="position: absolute right-3 bottom-3">{index}</p>
           </div>
         );
         break;
@@ -95,6 +99,7 @@ export default function Slider({
               )}
               {markDown && <div>{markDown}</div>}
             </div>
+            <p className="position: absolute right-3 bottom-3">{index}</p>{" "}
           </div>
         );
         break;
@@ -102,6 +107,7 @@ export default function Slider({
         content = (
           <div className="slider-container">
             <p>Diapositive non reconnue</p>
+            <p className="position: absolute right-3 bottom-3">{index}</p>{" "}
           </div>
         );
     }
@@ -125,7 +131,6 @@ export default function Slider({
               </li>
             ))}
         </ol>
-
         {code && (
           <div>
             <pre>
@@ -134,6 +139,7 @@ export default function Slider({
           </div>
         )}
         {markDown && <div>{markDown}</div>}
+        <p className="position: absolute right-3 bottom-3">{index}</p>
       </div>
     );
   }

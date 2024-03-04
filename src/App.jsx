@@ -17,7 +17,8 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const slide = slidesData[index];
   const total = slidesData.length;
-  const [showPreview, setShowPreview] = useState(false); // Ajout de l'état pour afficher/masquer l'aperçu
+  const [showPreview, setShowPreview] = useState(false);
+  const [showSlideIndex, setShowSlideIndex] = useState(true);
 
   const handlePrev = () => {
     setIndex((index - 1 + total) % total);
@@ -43,9 +44,7 @@ const App = () => {
   };
 
   const hideIndexSlide = () => {
-    const slideIndex = document.getElementById("slideIndex");
-    slideIndex.style.display =
-      slideIndex.style.display === "none" ? "block" : "none";
+    setShowSlideIndex(!showSlideIndex);
   };
 
   const togglePreview = () => {
@@ -86,6 +85,7 @@ const App = () => {
       )}
       <div className="h-[40rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
         <Slider
+          index={showSlideIndex ? index + 1 : null}
           titre={
             <div
               style={{ fontSize: slide.type === "titreOnly" ? "55px" : "35px" }}

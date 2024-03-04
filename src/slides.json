@@ -6,10 +6,10 @@
     "imageSize": "100px"
   },
   {
-    "type": "gridColumn",
+    "type": "titreContenu",
     "titre": "SlideMe, c’est quoi ?",
-    "contenu": "SlideMe est une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ) avec une multitude de fonctionnalités.",
-    "imageRight": "/src/assets/logo.png",
+    "contenu": "SlideMe est une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ) avec une multitude de fonctionnalités et d’exigences.",
+    "image": "/src/assets/logo.png",
     "imageLegende": "Logo de SlideMe",
     "imageSize": "150px",
     "listePucesRight": [
@@ -20,3 +20,4 @@
     ]
   }
 ]
+

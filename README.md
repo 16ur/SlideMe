@@ -24,4 +24,6 @@ Bienvenue dans SlideMe, un outil de création de présentations personnalisables
 
 - **Choix du type de la slide** : Utilisez la balise `"type"` pour définir le type de votre diapositive parmi les options suivantes : `"titreOnly"`, `"titreContenu"`, `"contenuSeul"`, `"gridColumn"`.
 
+- Expliquer comment faire pour mettre des éléments à gauche ou à droite sur la grid.
+
 Utilisez ces balises pour créer des présentations dynamiques avec SlideMe ! 🚀

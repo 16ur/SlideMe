@@ -1,23 +1,54 @@
 [
   {
-    "type": "titreOnly",
+    "type": "titreSousTitre",
     "titre": "Présentation de SlideMe",
+    "sousTitre": "Axel MANGUIAN TP3",
     "image": "/src/assets/logo.png",
     "imageSize": "100px"
   },
   {
-    "type": "titreContenu",
+    "type": "gridColumn",
     "titre": "SlideMe, c’est quoi ?",
-    "contenu": "SlideMe est une bibliothèque de composants React permettant de réaliser un support de présentation écrit en JSX ( React + Vite ) avec une multitude de fonctionnalités et d’exigences.",
-    "image": "/src/assets/logo.png",
-    "imageLegende": "Logo de SlideMe",
-    "imageSize": "150px",
-    "listePucesRight": [
-      "SlideMe est une bibliothèque de composants React",
-      "SlideMe permet de réaliser un support de présentation",
-      "SlideMe est écrit en JSX ( React + Vite )",
-      "SlideMe propose une multitude de fonctionnalités"
+    "contenu": "SlideMe est une bibliothèque permettant de réaliser un support de présentation avec une multitude de fonctionnalités et d’exigences.",
+    "listeNum": [
+      "C’est une bibliothèque de composants réalisée avec React + Vite",
+      "Elle permet de réaliser des présentations simplement avec des fichiers JSON",
+      "Elle est personnalisable à souhait"
+    ],
+    "imageLeft": "/src/assets/travolta.gif",
+    "imageLegende": "Travolta qui se demande comment SlideMe fonctionne ??",
+    "imageSize": "440px"
+  },
+  {
+    "titre": "Quels sont les composants disponibles ?",
+    "contenu": "SlideMe propose une multitude de composants, voici une liste non exhaustive :",
+    "listePuces": [
+      "type",
+      "titre",
+      "sousTitre",
+      "contenu",
+      "image",
+      "listePuces",
+      "listeNum",
+      "code",
+      "codeLegende",
+      "langage",
+      "Markdown"
     ]
+
+  },
+  {
+    "type": "titreOnly",
+    "titre": "Une envie soudaine de code ?"
+  },
+  {
+    "type": "centerElement",
+    "langage": "javascript",
+    "code": "<div className='slider-container flex justify-center items-center h-full'>\n <h1 className='font-bold'>{titre}</h1>\n {image && <div>{image}</div>}\n <p>{imageLegende}</p>\n <p className='position: absolute right-3 bottom-3'>{index}</p>\n</div>",
+    "codeLegende": "Morceau de code issu de SlideMe"
+  },
+  {
+    "type": "titreOnly",
+    "titre": "Et si on parlait de Markdown ?"
   }
 ]
-

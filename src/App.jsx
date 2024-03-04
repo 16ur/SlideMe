@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Slider from "./mycomponents/Slider";
 import "./App.css";
@@ -10,8 +10,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReactMarkdown from "react-markdown";
-import CustomDropdown from "./CustomDropdown"; // Importez le composant de menu personnalisé
+import WebFont from "webfontloader";
+import { use } from "marked";
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -19,6 +21,14 @@ const App = () => {
   const total = slidesData.length;
   const [showPreview, setShowPreview] = useState(false);
   const [showSlideIndex, setShowSlideIndex] = useState(true);
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Rubik"],
+      },
+    });
+  }, []);
 
   const handlePrev = () => {
     setIndex((index - 1 + total) % total);
@@ -52,7 +62,8 @@ const App = () => {
   };
 
   return (
-    <div className="">
+    <div className="App" style={{ fontFamily: "Rubik" }}>
+      {" "}
       {showPreview && (
         <div className="flex justify-center mt-10">
           {slidesData.map((slide, i) => (
@@ -88,14 +99,18 @@ const App = () => {
           index={showSlideIndex ? index + 1 : null}
           titre={
             <div
-              style={{ fontSize: slide.type === "titreOnly" ? "55px" : "35px" }}
+              style={{
+                fontSize: slide.type === "titreOnly" ? "70px" : "48px",
+              }}
             >
               {slide.titre}
             </div>
           }
           sousTitre={<div style={{ fontSize: "25px" }}>{slide.sousTitre}</div>}
           contenu={
-            <div style={{ fontSize: "20px", marginTop: "20px" }}>
+            <div
+              style={{ fontSize: "23px", marginTop: "40px", margin: "10px" }}
+            >
               {slide.contenu}
             </div>
           }
@@ -129,7 +144,7 @@ const App = () => {
           imageLegende={
             slide.imageLegende && (
               <p
-                style={{ fontSize: "15px", color: "gray", fontStyle: "italic" }}
+                style={{ fontSize: "16px", color: "gray", fontStyle: "italic" }}
               >
                 {slide.imageLegende}
               </p>
@@ -139,15 +154,28 @@ const App = () => {
           listeNum={slide.listeNum}
           code={
             slide.code && (
-              <SyntaxHighlighter language={slide.langage}>
+              <SyntaxHighlighter
+                language={slide.langage}
+                style={atomDark}
+                showLineNumbers={true}
+              >
                 {slide.code}
               </SyntaxHighlighter>
             )
           }
+          codeLegende={
+            slide.codeLegende && (
+              <p
+                style={{ fontSize: "16px", color: "gray", fontStyle: "italic" }}
+              >
+                {slide.codeLegende}
+              </p>
+            )
+          }
           listePucesLeft={slide.listePucesLeft}
           listePucesRight={slide.listePucesRight}
-          markDown={
-            slide.markDown && <ReactMarkdown>{slide.markDown}</ReactMarkdown>
+          Markdown={
+            slide.Markdown && <ReactMarkdown>{slide.Markdown}</ReactMarkdown>
           }
           type={slide.type}
         />
@@ -157,14 +185,12 @@ const App = () => {
           onClick={handlePrev}
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
         >
-          {" "}
           <FontAwesomeIcon icon={faLeftLong} />
         </button>
         <button
-          onClick={handlePrev}
+          onClick={handleNext}
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
         >
-          {" "}
           <FontAwesomeIcon icon={faRightLong} />
         </button>
         <input

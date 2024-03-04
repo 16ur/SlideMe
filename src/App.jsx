@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import Slider from "./mycomponents/Slider";
 import "./App.css";
 import slidesData from "./slides.json";
@@ -7,13 +6,14 @@ import {
   faEye,
   faLeftLong,
   faRightLong,
+  faExpand,
+  faCompress,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ReactMarkdown from "react-markdown";
 import WebFont from "webfontloader";
-import { use } from "marked";
 
 const App = () => {
   const [index, setIndex] = useState(0);
@@ -21,6 +21,7 @@ const App = () => {
   const total = slidesData.length;
   const [showPreview, setShowPreview] = useState(false);
   const [showSlideIndex, setShowSlideIndex] = useState(true);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   useEffect(() => {
     WebFont.load({
@@ -28,7 +29,23 @@ const App = () => {
         families: ["Rubik"],
       },
     });
-  }, []);
+
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 37) {
+        // Left arrow key
+        handlePrev();
+      } else if (event.keyCode === 39) {
+        // Right arrow key
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [index]);
 
   const handlePrev = () => {
     setIndex((index - 1 + total) % total);
@@ -58,12 +75,23 @@ const App = () => {
   };
 
   const togglePreview = () => {
-    setShowPreview(!showPreview); // Inverser l'état de l'aperçu
+    setShowPreview(!showPreview);
+  };
+
+  const toggleFullScreen = () => {
+    const sliderElement = document.getElementById("slider-container");
+    if (sliderElement) {
+      if (!isFullScreen) {
+        sliderElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+      setIsFullScreen(!isFullScreen);
+    }
   };
 
   return (
     <div className="App" style={{ fontFamily: "Rubik" }}>
-      {" "}
       {showPreview && (
         <div className="flex justify-center mt-10">
           {slidesData.map((slide, i) => (
@@ -89,12 +117,15 @@ const App = () => {
             >
               <p className="text-center justify-center text-black-500 text-7xl">
                 {i + 1}
-              </p>{" "}
+              </p>
             </div>
           ))}
         </div>
       )}
-      <div className="h-[40rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black">
+      <div
+        id="slider-container"
+        className="h-[40rem] bg-gray-100 shadow-md rounded-md ml-10 mr-10 mt-10 border-solid border-0 border-black p-6"
+      >
         <Slider
           index={showSlideIndex ? index + 1 : null}
           titre={
@@ -224,10 +255,21 @@ const App = () => {
       </div>
       <div className="flex justify-center mt-2">
         <button onClick={togglePreview} className="underline text-lg">
-          {showPreview ? "Masquer l'aperçu" : "Afficher l'aperçu"} {}
+          {showPreview ? "Masquer l'aperçu" : "Afficher l'aperçu"}
+        </button>
+      </div>
+      <div className="flex justify-center mt-2">
+        <button onClick={toggleFullScreen} className="underline text-lg">
+          {isFullScreen ? (
+            <FontAwesomeIcon icon={faCompress} />
+          ) : (
+            <FontAwesomeIcon icon={faExpand} />
+          )}{" "}
+          {isFullScreen ? "Quitter le plein écran" : "Mettre en plein écran"}
         </button>
       </div>
     </div>
   );
 };
+
 export default App;

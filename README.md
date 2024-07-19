@@ -5,23 +5,6 @@
 Bienvenue dans SlideMe, un outil de création de présentations personnalisables.
 
 
-
-Bien sûr! Voici un exemple de fichier README pour une application Ionic, détaillant comment démarrer le projet en français:
-
----
-
-# Projet d'Application Ionic
-
-Bienvenue dans le Projet d'Application Ionic! Ce fichier README vous guidera sur la façon de configurer et d'exécuter le projet sur votre machine locale.
-
-## Table des Matières
-1. [Prérequis](#prérequis)
-2. [Installation](#installation)
-3. [Exécution de l'Application](#exécution-de-lapplication)
-4. [Construction pour la Production](#construction-pour-la-production)
-5. [Contribution](#contribution)
-6. [Licence](#licence)
-
 ## Prérequis
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants :

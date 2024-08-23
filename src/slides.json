@@ -1,68 +1,67 @@
-  [
-    {
-      "type": "titreSousTitre",
-      "titre": "Présentation de SlideMe",
-      "sousTitre": "Axel MANGUIAN TP3",
-      "image": "/src/assets/logo.png",
-      "imageSize": "100px"
-    },
-    {
-      "type": "gridColumn",
-      "titre": "SlideMe, c’est quoi ?",
-      "contenu": "SlideMe est une bibliothèque permettant de réaliser un support de présentation avec une multitude de fonctionnalités et d’exigences.",
-      "listeNum": [
-        "C’est une bibliothèque de composants réalisée avec React + Vite",
-        "Elle permet de réaliser des présentations simplement avec des fichiers JSON",
-        "Elle est personnalisable à souhait"
-      ],
-      "imageLeft": "/src/assets/travolta.gif",
-      "imageLegende": "Travolta qui se demande comment SlideMe fonctionne",
-      "imageSize": "418px"
-    },
-    {
-      "titre": "Quels sont les composants disponibles ?",
-      "Markdown": "SlideMe propose une *multitude* de composants, voici une liste non exhaustive :",
-      "listePuces": [
-        "type",
-        "titre",
-        "sousTitre",
-        "contenu",
-        "image",
-        "imageSize",
-        "imageLegende",
-        "listePuces",
-        "listeNum",
-        "code",
-        "codeLegende",
-        "langage",
-        "Markdown"
-      ]
-
-    },
-    {
-      "type": "titreOnly",
-      "titre": "Une envie soudaine de code ?"
-    },
-    {
-      "type": "centerElement",
-      "langage": "javascript",
-      "code": "<div className='slider-container flex justify-center items-center h-full'>\n <h1 className='font-bold'>{titre}</h1>\n {image && <div>{image}</div>}\n <p>{imageLegende}</p>\n <p className='position: absolute right-3 bottom-3'>{index}</p>\n</div>",
-      "codeLegende": "Morceau de code issu de SlideMe"
-    },
-    {
-      "type": "titreOnly",
-      "titre": "Et... comment ça marche ?"
-    },
-    {
-      "type": "titreContenu",
-      "titre": "Création d’une slide",
-      "Markdown": "SlideMe fonctionne avec un fichier JSON, il suffit alors de remplir le fichier **slides.json** et utiliser correctement les balises.",
-      "code": "[\n{\n'type': 'titreSousTitre',\n'titre': 'Présentation de SlideMe',\n'sousTitre': 'Axel MANGUIAN TP3', \n'image': '/src/assets/logo.png', \n'imageSize': '100px' \n}\n]",
-      "langage": "json",
-      "codeLegende": "Exemple création de slide en JSON"
-    },
-    {
-      "type": "titreOnly",
-      "titre": "Merci de m’avoir écouté !"
-    }
-  ]
+[
+  {
+    "type": "titreSousTitre",
+    "titre": "Présentation de SlideMe",
+    "sousTitre": "Axel MANGUIAN TP3",
+    "image": "/src/assets/logo.png",
+    "imageSize": "100px"
+  },
+  {
+    "type": "gridColumn",
+    "titre": "SlideMe, c’est quoi ?",
+    "contenu": "SlideMe est une bibliothèque permettant de réaliser un support de présentation avec une multitude de fonctionnalités et d’exigences.",
+    "listeNum": [
+      "C’est une bibliothèque de composants réalisée avec React + Vite",
+      "Elle permet de réaliser des présentations simplement avec des fichiers JSON",
+      "Elle est personnalisable à souhait"
+    ],
+    "imageLeft": "/src/assets/travolta.gif",
+    "imageLegende": "Travolta qui se demande comment SlideMe fonctionne",
+    "imageSize": "418px"
+  },
+  {
+    "titre": "Quels sont les composants disponibles ?",
+    "Markdown": "SlideMe propose une *multitude* de composants, voici une liste non exhaustive :",
+    "listePuces": [
+      "type",
+      "titre",
+      "sousTitre",
+      "contenu",
+      "image",
+      "imageSize",
+      "imageLegende",
+      "listePuces",
+      "listeNum",
+      "code",
+      "codeLegende",
+      "langage",
+      "Markdown"
+    ]
+  },
+  {
+    "type": "titreOnly",
+    "titre": "Une envie soudaine de code ?"
+  },
+  {
+    "type": "centerElement",
+    "langage": "javascript",
+    "code": "<div className='slider-container flex justify-center items-center h-full'>\n <h1 className='font-bold'>{titre}</h1>\n {image && <div>{image}</div>}\n <p>{imageLegende}</p>\n <p className='position: absolute right-3 bottom-3'>{index}</p>\n</div>",
+    "codeLegende": "Morceau de code issu de SlideMe"
+  },
+  {
+    "type": "titreOnly",
+    "titre": "Et... comment ça marche ?"
+  },
+  {
+    "type": "titreContenu",
+    "titre": "Création d’une slide",
+    "Markdown": "SlideMe fonctionne avec un fichier JSON, il suffit alors de remplir le fichier **slides.json** et utiliser correctement les balises.",
+    "code": "[\n{\n'type': 'titreSousTitre',\n'titre': 'Présentation de SlideMe',\n'sousTitre': 'Axel MANGUIAN TP3', \n'image': '/src/assets/logo.png', \n'imageSize': '100px' \n}\n]",
+    "langage": "json",
+    "codeLegende": "Exemple création de slide en JSON"
+  },
+  {
+    "type": "titreOnly",
+    "titre": "Merci de m’avoir écouté !"
+  }
+]

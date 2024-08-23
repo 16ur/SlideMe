@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Slider from "./mycomponents/Slider";
-import "./App.css";
 import slidesData from "./slides.json";
 import {
   faEye,
